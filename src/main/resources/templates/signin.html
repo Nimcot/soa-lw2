@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LW2 - Login form</title>
+    <link rel="icon" th:href="@{/img/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <form class="form" action="/signin" method="post">
+        <h1 class="title">Authorization</h1>
+        <p><a class="link" href="/signup">Not registered?</a></p>
+        <div class="input-container">
+            <input id="username" class="input" type="text" name="username" placeholder="" required/>
+            <div class="cut"></div>
+            <label for="username" class="placeholder">Username</label>
+        </div>
+        <br>
+        <div class="input-container">
+            <input id="password" class="input" type="password" name="password" placeholder="" required/>
+            <div class="cut"></div>
+            <label for="password" class="placeholder">Password</label>
+        </div>
+        <br>
+        <button class="submit" type="submit">Sign in</button>
+    </form>
+</body>
+</html>

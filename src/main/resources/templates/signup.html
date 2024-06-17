@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LW2 - Registration form</title>
+    <link rel="icon" th:href="@{/img/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <form class="form" action="/signup" method="post">
+        <h1 class="title">Registration</h1>
+        <p><a class="link" href="/signin">Already registered?</a></p>
+        <div class="input-container">
+            <input id="username" class="input" type="text" name="username" placeholder="" required/>
+            <div class="cut"></div>
+            <label for="username" class="placeholder">Username</label>
+        </div>
+        <br>
+        <div class="input-container">
+            <input id="password1" class="input" type="password" name="password1" placeholder="" required/>
+            <div class="cut"></div>
+            <label for="password1" class="placeholder">Password</label>
+        </div>
+        <br>
+        <div class="input-container">
+            <input id="password2" class="input" type="password" name="password2" placeholder="" required/>
+            <div class="cut"></div>
+            <label for="password2" class="placeholder">Confirm p.</label>
+        </div>
+        <br>
+        <button class="submit" type="submit">Sign up</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LW2 - Website content</title>
+    <link rel="icon" th:href="@{/img/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body style="display: block">
+    <header class="navbar">
+        <h3>Welcome, <b id="user">[[${current_username}]]</b>!</h3>
+        <a href="/signout">Sign out</a>
+    </header>
+    <main>
+        <div class="horizontal-docker">
+            <div class="form">
+                <h2 class="subtitle">Profile picture</h2>
+                <br>
+                <img th:src="@{/img/test-image.jpg}" alt="">
+            </div>
+            <div class="form">
+                <h2 class="subtitle" style="text-align: center">Change data</h2>
+                <br>
+                <form action="/username-change" method="post">
+                    <div class="input-container">
+                        <input id="username" class="input" type="text" name="username" placeholder="" required/>
+                        <div class="cut"></div>
+                        <label for="username" class="placeholder">Username</label>
+                    </div>
+                    <br>
+                    <button class="submit" type="submit">Update</button>
+                </form>
+                <br><br>
+                <form action="/password-change" method="post">
+                    <div class="input-container">
+                        <input id="password1" class="input" type="password" name="password1" placeholder="" required/>
+                        <div class="cut"></div>
+                        <label for="password1" class="placeholder">Password</label>
+                    </div>
+                    <br>
+                    <div class="input-container">
+                        <input id="password2" class="input" type="password" name="password2" placeholder="" required/>
+                        <div class="cut"></div>
+                        <label for="password2" class="placeholder">Confirm p.</label>
+                    </div>
+                    <br>
+                    <button class="submit" type="submit">Update</button>
+                </form>
+            </div>
+        </div>
+        <div class="form" style="width: fit-content; max-width: none; margin: 50px auto">
+            <table>
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Password hash</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="user : ${all_users}">
+                        <td>[[${user.username}]]</td>
+                        <td>[[${user.passwordHash}]]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
